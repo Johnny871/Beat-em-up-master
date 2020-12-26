@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-
+    [SerializeField] private float speed;
     Renderer targetRenderer;
 
     void Start()
@@ -14,7 +14,7 @@ public class Sword : MonoBehaviour
 
     
     void Update(){
-        this.transform.Translate(0.1f,0,0);
+        this.transform.Translate(speed * Time.deltaTime,0,0);
         if(targetRenderer.isVisible){
         }else{
             this.gameObject.SetActive(false);
