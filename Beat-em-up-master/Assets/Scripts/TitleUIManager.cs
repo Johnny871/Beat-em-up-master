@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleUIManager : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class TitleUIManager : MonoBehaviour
 
     public void OnClickStartButton(){
         Debug.Log("Startボタンが押された");
+        SceneManager.LoadScene("Main");
     }
 
     public void PointDownStartButton(){

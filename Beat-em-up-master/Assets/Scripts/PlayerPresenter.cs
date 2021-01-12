@@ -6,14 +6,8 @@ using UniRx.Triggers;
 
 public class PlayerPresenter : MonoBehaviour
 {
-
-    
     public PlayerModel model = new PlayerModel();
     [SerializeField] private PlayerView view;
-
-    
-
-    // Start is called before the first frame update
     void Start()
     {
         model.IsTurn
@@ -33,7 +27,6 @@ public class PlayerPresenter : MonoBehaviour
 
         view.playerHP
             .Subscribe(c => {
-                //.SkipLatestValueOnSubscribe();
                 model.playerHP.Value = c;
                 Debug.Log("HPは" + c);
                 model.CalcPlayerHP();
@@ -68,11 +61,5 @@ public class PlayerPresenter : MonoBehaviour
             .Subscribe(_ => {
                 view.ThrowSword();
             });
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }
